@@ -25,8 +25,8 @@ before_install:
 - pip install cram --user `whoami`
 
 script:
-- go test . -v -covermode=count -coverprofile=profile.cov
-- go test ./cipher -v -covermode=count -coverprofile=cipher/profile.cov
+- go test . -covermode=count -coverprofile=profile.cov
+- go test ./cipher -covermode=count -coverprofile=cipher/profile.cov
 - cd jose-util && go build && PATH=$PWD:$PATH cram -v jose-util.t
 - cd ..
 
